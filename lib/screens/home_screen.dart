@@ -48,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 25.0),
+                margin: EdgeInsets.only(bottom: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
