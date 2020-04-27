@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/home_screen_popular_card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,9 +9,30 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final Map<String, dynamic> mostVisitedPlaces = {
       'data': [
-        { 'name': 'Mt.Bromo', 'image': 'assets/images/dummy/place1.jpg' },
-        { 'name': 'Kuta Beach', 'image': 'assets/images/dummy/place2.jpg' },
-        { 'name': 'Borubudur Temple', 'image': 'assets/images/dummy/place3.jpg' }
+        {
+          'title': 'Mt.Bromo',
+          'image': 'assets/images/dummy/place1.jpg',
+          'description': 'Lorem ipsum dolor sit amet, '
+              + 'consectetur adipiscing elit. Praesent fermentum nisl quis dignissim gravida. '
+                  + 'Integer vel leo gravida, blandit nibh pharetra, molestie ligula. '
+                  + 'Nam ac metus quis sem molestie bibendum eu vel elit. '
+        },
+        {
+          'title': 'Kuta Beach',
+          'image': 'assets/images/dummy/place2.jpg',
+          'description': 'Lorem ipsum dolor sit amet, '
+              + 'consectetur adipiscing elit. Praesent fermentum nisl quis dignissim gravida. '
+              + 'Integer vel leo gravida, blandit nibh pharetra, molestie ligula. '
+              + 'Nam ac metus quis sem molestie bibendum eu vel elit. '
+        },
+        {
+          'title': 'Borubudur Temple',
+          'image': 'assets/images/dummy/place3.jpg',
+          'description': 'Lorem ipsum dolor sit amet, '
+              + 'consectetur adipiscing elit. Praesent fermentum nisl quis dignissim gravida. '
+              + 'Integer vel leo gravida, blandit nibh pharetra, molestie ligula. '
+              + 'Nam ac metus quis sem molestie bibendum eu vel elit. '
+        }
       ]
   };
 
@@ -25,49 +47,42 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(bottom: 25.0),
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 25.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Yuk', style: TextStyle(
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w300
-                    )),
                     Text('Tamasya', style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold
-                    ))
+                    )),
+                    Text('Let\'s take a trip', style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w300
+                    )),
                   ],
                 ),
               ),
               Container(
-                height: 500,
+                height: 380,
+                margin: EdgeInsets.only(bottom: 15.0),
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: mostVisitedPlaces['data'].length,
                     itemBuilder: (context, index) {
-                      return Column(
-                        children: <Widget>[
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage(mostVisitedPlaces['data'][index]['image']),
-                                fit: BoxFit.cover,
-                              ),
-                              height: 200,
-                              width: 290,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                          )
-                        ],
-                      );
+                      return HomeScreenPopularCard(data: mostVisitedPlaces['data'][index]);
                     }
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0, bottom: 15.0),
+                child: Text('Categories', style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0
+                )),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Text('Beach'),
               )
             ],
           ),
