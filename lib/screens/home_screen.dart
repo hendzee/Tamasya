@@ -81,6 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 )),
               ),
               Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(20.0)
+                ),
+                width: double.infinity,
+                height: 90,
+                margin: EdgeInsets.symmetric(horizontal: 15.0),
                 padding: EdgeInsets.only(left: 15.0),
                 child: Text('Beach'),
               )
