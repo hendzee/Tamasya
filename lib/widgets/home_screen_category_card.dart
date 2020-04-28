@@ -10,7 +10,7 @@ class HomeScreenCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 90.0,
+      height: 100.0,
       margin: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
@@ -18,18 +18,20 @@ class HomeScreenCategoryCard extends StatelessWidget {
           children: <Widget>[
             Image(
               image: AssetImage(image),
-              height: 90.0,
+              height: 100.0,
               fit: BoxFit.cover,
             ),
             Align(
               alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15.0),
-                child: Text(title, style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                )),
+              child: Row(
+                children: <Widget>[
+                  SizedBox(width: 20.0,),
+                  Text(title, style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                  )),
+                ],
               ),
             )
           ],

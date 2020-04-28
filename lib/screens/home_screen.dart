@@ -8,6 +8,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Data dummy for most visited places
   final Map<String, dynamic> mostVisitedPlaces = {
       'data': [
         {
@@ -35,6 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
               + 'Nam ac metus quis sem molestie bibendum eu vel elit. '
         }
       ]
+  };
+
+  // Data dummy for category list
+  final Map<String, dynamic> categories = {
+    'data': [
+      { 'title': 'City', 'image': 'assets/images/app/category1.png' },
+      { 'title': 'Mountain', 'image': 'assets/images/app/category2.png' },
+      { 'title': 'Village', 'image': 'assets/images/app/category3.png' },
+      { 'title': 'Beach', 'image': 'assets/images/app/category4.png' },
+    ]
   };
 
   @override
@@ -82,10 +93,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 18.0
                 )),
               ),
-              HomeScreenCategoryCard(title: 'City', image: 'assets/images/app/category1.png'),
-              HomeScreenCategoryCard(title: 'Mountain', image: 'assets/images/app/category2.png'),
-              HomeScreenCategoryCard(title: 'Village', image: 'assets/images/app/category3.png'),
-              HomeScreenCategoryCard(title: 'Beach', image: 'assets/images/app/category4.png'),
+              ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: categories['data'].length,
+                  itemBuilder: (context, index) {
+                    return HomeScreenCategoryCard(
+                        title: categories['data'][index]['title'],
+                        image: categories['data'][index]['image']
+                    );
+                  }
+              ),
             ],
           ),
         ),
