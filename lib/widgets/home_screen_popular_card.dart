@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 class HomeScreenPopularCard extends StatelessWidget {
   final Map<String, dynamic>data;
@@ -57,7 +58,7 @@ class HomeScreenPopularCard extends StatelessWidget {
                       )),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.remove_red_eye, color: Colors.black26, size: 20.0,),
+                          Icon(EvaIcons.eye, color: Colors.black26, size: 20.0),
                           SizedBox(width: 5.0,),
                           Text('110K', style: TextStyle(color: Colors.black26),),
                           SizedBox(width: 10.0,),

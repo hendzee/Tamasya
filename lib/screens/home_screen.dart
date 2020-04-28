@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import '../widgets/home_screen_popular_card.dart';
 import '../widgets/home_screen_category_card.dart';
 
@@ -82,6 +83,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     itemCount: mostVisitedPlaces['data'].length,
                     itemBuilder: (context, index) {
+                      if (index + 1 == mostVisitedPlaces['data'].length) {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            HomeScreenPopularCard(data: mostVisitedPlaces['data'][index]),
+                            SizedBox(width: 15.0),
+                          ],
+                        );
+                      }
                       return HomeScreenPopularCard(data: mostVisitedPlaces['data'][index]);
                     }
                 ),
