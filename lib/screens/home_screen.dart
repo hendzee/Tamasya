@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/home_screen_popular_card.dart';
+import '../widgets/home_screen_category_card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -81,17 +82,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 18.0
                 )),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(20.0)
-                ),
-                width: double.infinity,
-                height: 90,
-                margin: EdgeInsets.symmetric(horizontal: 15.0),
-                padding: EdgeInsets.only(left: 15.0),
-                child: Text('Beach'),
-              )
+              HomeScreenCategoryCard(title: 'City', image: 'assets/images/app/category1.png'),
+              HomeScreenCategoryCard(title: 'Mountain', image: 'assets/images/app/category2.png'),
+              HomeScreenCategoryCard(title: 'Village', image: 'assets/images/app/category3.png'),
+              HomeScreenCategoryCard(title: 'Beach', image: 'assets/images/app/category4.png'),
             ],
           ),
         ),
