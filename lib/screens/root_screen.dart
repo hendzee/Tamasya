@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import './home_screen.dart';
+import './search_screen.dart';
+import './story_screen.dart';
+import './notification_screen.dart';
+import './profile_screen.dart';
 
 class RootScreen extends StatefulWidget {
   @override
@@ -12,10 +16,10 @@ class _RootScreenState extends State<RootScreen> {
 
   final List<Widget> _screenList = [
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    SearchScreen(),
+    StoryScreen(),
+    NotificationScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -55,6 +59,7 @@ class _RootScreenState extends State<RootScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
+        backgroundColor: Colors.white,
       ),
     );
   }

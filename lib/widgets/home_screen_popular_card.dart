@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 class HomeScreenPopularCard extends StatelessWidget {
-  final Map<String, dynamic>data;
+  final String title;
+  final String image;
+  final String description;
 
-  HomeScreenPopularCard({ this.data });
+  HomeScreenPopularCard({ this.title, this.image, this.description });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class HomeScreenPopularCard extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Image(
-                      image: AssetImage(data['image']),
+                      image: AssetImage(image),
                       height: 200,
                       width: 280,
                       fit: BoxFit.cover,
@@ -52,15 +54,15 @@ class HomeScreenPopularCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(data['title'], style: TextStyle(
+                      Text(title, style: TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold
                       )),
                       Row(
                         children: <Widget>[
-                          Icon(EvaIcons.eye, color: Colors.black26, size: 20.0),
+                          Icon(EvaIcons.eyeOutline, size: 20.0),
                           SizedBox(width: 5.0,),
-                          Text('110K', style: TextStyle(color: Colors.black26),),
+                          Text('110K'),
                           SizedBox(width: 10.0,),
                         ],
                       )
@@ -73,7 +75,7 @@ class HomeScreenPopularCard extends StatelessWidget {
                       color: Colors.black26,
                     )),
                   ),
-                  Text(data['description'])
+                  Text(description)
                 ],
                 crossAxisAlignment: CrossAxisAlignment.start,
               ),

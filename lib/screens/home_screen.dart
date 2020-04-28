@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold
                     )),
                     Text('Let\'s take a trip', style: TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 25.0,
                         fontWeight: FontWeight.w300
                     )),
                   ],
@@ -87,12 +87,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         return Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            HomeScreenPopularCard(data: mostVisitedPlaces['data'][index]),
+                            HomeScreenPopularCard(
+                                title: mostVisitedPlaces['data'][index]['title'],
+                                image: mostVisitedPlaces['data'][index]['image'],
+                                description: mostVisitedPlaces['data'][index]['description'],
+                            ),
                             SizedBox(width: 15.0),
                           ],
                         );
                       }
-                      return HomeScreenPopularCard(data: mostVisitedPlaces['data'][index]);
+                      return HomeScreenPopularCard(
+                        title: mostVisitedPlaces['data'][index]['title'],
+                        image: mostVisitedPlaces['data'][index]['image'],
+                        description: mostVisitedPlaces['data'][index]['description'],
+                      );
                     }
                 ),
               ),
