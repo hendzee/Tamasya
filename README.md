@@ -1,16 +1,21 @@
-# tamasya
+# Tamasya
+Tamasya is mobile application that make for share attraction place, share their experience story about that  
+and help people to choose their destination. You can fork and develop your own with permission, just
+email me at hendzcode@gmail.com
 
-A new Flutter application.
+### __What content of app ?__
+* Share story about their trip experience to each other
+* Recomendation trip
+* Explore thousands+ beautiful places on app
 
-## Getting Started
+### __Pre-Install__
+* [Install flutter SDK](https://flutter.dev/docs/get-started/install)
 
-This project is a starting point for a Flutter application.
+### __Install__
+In directory, run follow to install all dependencies:
+```
+flutter pub get
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### __Status Project__
+On progress

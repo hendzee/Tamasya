@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
-import './screens/home_screen.dart';
 import './screens/root_screen.dart';
 
 void main() => runApp(MyApp());
